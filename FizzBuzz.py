@@ -1,6 +1,7 @@
 """
 Q1. Why is the report method untestable ? [2 pts]
-
+---->>>>>
+report_file open and path is external collaborative (platform and system environment dependent) which is handled in the function so it is untestable 
 
 
 
@@ -10,27 +11,47 @@ Q2. How will you change the api of the report method to make it more testable ? 
 
 """
 class FizzBuzz(object):
-    def report(self, numbers):
 
-        report_file = open('c:/temp/fizzbuzz_report.txt', 'w')
+    def report(self, numbers, file_handle):
 
         for number in numbers:
+
             msg = str(number) + " "
+
             fizzbuzz_found = False
+
             if number % 3 == 0:
+
                 msg += "fizz "
+
                 fizzbuzz_found = True
+
             if number % 5 == 0:
-                msg += "buzz "
-                fizzbuzz_found = True
+
+                    msg += "buzz "
+
+                    fizzbuzz_found = True
 
             if fizzbuzz_found:
-                report_file.write(msg + "\n")
 
-        report_file.close()
+                        file_handle.write(msg + "\n")
 
-if "__main__" == __name__:
-    fb = FizzBuzz()
-    fb.report(range(100))
+ 
 
             
+
+ 
+
+ 
+
+if "__main__" == __name__:
+
+        fb = FizzBuzz()
+
+        file_handle = open('temp.txt', 'w') # can create open wrapper
+
+        fb.report(range(100), file_handle)
+
+        file_handle.close()
+
+
