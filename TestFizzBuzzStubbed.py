@@ -21,7 +21,19 @@ Q4. Implement MyStub class so that you can send it as a fake object to the
 
 """
 class MyStub(object):
-    pass
+    def __init__(self, values)
+        self.flag = False
+        self.values = []
+            
+    def open(self)
+        self.flag = True
+        
+    def write(self,msg)
+        self.values.append(msg)
+        
+    def close(self)
+        self.flag = False
+
 
 
 
