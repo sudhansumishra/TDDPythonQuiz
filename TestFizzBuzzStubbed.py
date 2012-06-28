@@ -34,15 +34,7 @@ class MyStub(object):
     def close(self)
         self.flag = False
 
-
-
-
-
-
-
-
-
-    
+  
 class TestFizzBuzzStubbed(unittest.TestCase):
         
     @classmethod
