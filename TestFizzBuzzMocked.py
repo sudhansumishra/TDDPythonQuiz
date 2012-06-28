@@ -17,8 +17,16 @@ class TestFizzBuzzMocked(pymock.PyMockTestCase):
         self.fb = None
 
     def test_report(self):
-        pass
-
+        #create mock
+        mockFileProvider = self.mock()
+        mockFileWrapper = self.mockFileProvider('report.txt', 'w')
+        #replay        
+        self.replay()        
+        #Call the report method with mocked filewrapper        
+        numbers=range(100)        
+        FizzBuzz.report(self.numbers,self.mockFileWrapper)                
+        #verify        
+        self.verify()
 
 
 
